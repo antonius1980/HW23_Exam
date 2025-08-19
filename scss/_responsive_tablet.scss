@@ -13,7 +13,7 @@
 	}
 
 	.hamburger-toggle {
-		&:checked ~ .hamburger-toggle-label > span {
+		&:checked ~ .hamburger-toggle-label > span { 
 			transform: rotate(45deg);
 		}
 		&:checked ~ .hamburger-toggle-label > span::before {
