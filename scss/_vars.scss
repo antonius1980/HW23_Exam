@@ -1,0 +1,99 @@
+@use "functions" as *;
+
+// Main vars
+$font-size-html: 10px;
+$font-size-global: 18px;
+$line-height-global: 26px;
+$font-family-global: "Lato", sans-serif;
+$font-weight-global: 300;
+
+$container-width: 100%;
+$container-width-max: 1170px;
+$container-padding: 25px;
+
+$btn-big-inline-padding: 90px;
+
+$background-color-global: #fff;
+$background-image-global: url("../assets/img/first-screen-bg.webp");
+$background-image-global-big: url("../assets/img/first-screen-bg@2x.webp");
+$quote-icon-image: url("../assets/img/svg/small/quote-icon-red.svg");
+$text-color-primary: #262a3f;
+$text-color-primary-rgb: hex-to-rgb-list($text-color-primary);
+$accent-color-primary: #85bbb1;
+$border-color-primary: #e4e4e4;
+$light-color-primary: #fff;
+$buttons-color-primary: #f1897b;
+$buttons-color-secondary: #e54f3a;
+$buttons-border-color-primary: $border-color-primary;
+$buttons-border-color-secondary: $buttons-color-secondary;
+$links-color-primary: $accent-color-primary;
+$links-color-secondary: $buttons-color-secondary;
+$font-family-headings: "Playfair Display", serif;
+$font-color-heading: $text-color-primary;
+// $accent-color-primary-rgb: hex-to-rgb($accent-color-primary);
+
+/* Theme Light */
+// $background-color-global: #fff;
+// $background-image-global: url("../assets/img/first-screen-bg.webp");
+// $background-image-global-big: url("../assets/img/first-screen-bg@2x.webp");
+// $quote-icon-image: url("../assets/img/svg/small/quote-icon-red.svg");
+// $text-color-primary: #262a3f;
+// $text-color-primary-rgb: hex-to-rgb-list($text-color-primary);
+// $accent-color-primary: #85bbb1;
+// $border-color-primary: #e4e4e4;
+// $light-color-primary: #fff;
+// $buttons-color-primary: #f1897b;
+// $buttons-color-secondary: #e54f3a;
+// $buttons-border-color-primary: $border-color-primary;
+// $buttons-border-color-secondary: $buttons-color-secondary;
+// $links-color-primary: $accent-color-primary;
+// $links-color-secondary: $buttons-color-secondary;
+// $font-color-heading: $text-color-primary;
+
+/* Theme Dark */
+// $background-color-global: #161926;
+// $background-image-global: url("../assets/img/first-screen-bg-dark.webp");
+// $background-image-global-big: url("../assets/img/first-screen-bg-dark@2x.webp");
+// $quote-icon-image: url("../assets/img/svg/small/quote-icon-green.svg");
+// $text-color-primary: #fff;
+// $text-color-primary-rgb: hex-to-rgb-list($text-color-primary);
+// $accent-color-primary: #689ff2;
+// $border-color-primary: #515773;
+// $light-color-primary: #fff;
+// $buttons-color-primary: #53f3cd;
+// $buttons-color-secondary: #02e0ab;
+// $buttons-border-color-primary: $border-color-primary;
+// $buttons-border-color-secondary: $buttons-color-secondary;
+// $links-color-primary: $accent-color-primary;
+// $links-color-secondary: $buttons-color-secondary;
+// $font-color-heading: $text-color-primary;
+
+// Breakpoints mobile first
+//0 - default CSS
+// $lb-xs-min: 359.99px;
+// $lb-xs: 360px;
+// $lb-sm-min: 575.99px;
+// $lb-sm: 576px;
+// $lb-md-min: 767.99px;
+// $lb-md: 768px;
+// $lb-lg-min: 991.99px;
+// $lb-lg: 992px;
+// $lb-xl-min: 1199.99px;
+// $lb-xl: 1200px;
+// $lb-xxl-min: 1399.99px;
+// $lb-xxl: 1400px;
+
+// Breakpoints desktop first
+//Widescreen - default CSS
+$lb-xxl: 1400px;
+$lb-xxl-min: 1399.99px;
+$lb-xl: 1200px;
+$lb-xl-min: 1199.99px;
+$lb-lg: 992px;
+$lb-lg-min: 991.99px;
+$lb-md: 768px;
+$lb-md-min: 767.99px;
+$lb-sm: 576px;
+$lb-sm-min: 575.99px;
+$lb-xs: 360px;
+$lb-xs-min: 359.99px;

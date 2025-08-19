@@ -1,0 +1,65 @@
+@use "include" as *;
+
+
+//Default styles without media queries - Resolutions for widescreen
+
+//Resolutions up from 1400px ($lb-xxl)
+@media screen and (min-width: $lb-xxl) {
+
+}
+
+
+//Resolutions below starting from 1399.99px ($lb-xxl-min)
+@media screen and (max-width: $lb-xxl-min) {
+
+}
+
+//Resolutions from ($lb-xl) 1200px to 1399.99px ($lb-xxl-min)
+@media screen and (min-width: $lb-xl) and (max-width: $lb-xxl-min) {
+
+}
+
+//Resolutions below starting from 1199.99px ($lb-xl-min)
+@media screen and (max-width: $lb-xl-min) {
+
+}
+
+//Resolutions from ($lb-lg) 992px to 1199.99px ($lb-xl-min)
+@media screen and (min-width: $lb-lg) and (max-width: $lb-xl-min) {
+
+}
+
+//Resolutions below starting from 991.99px ($lb-lg-min)
+@media screen and (max-width: $lb-lg-min) {
+
+}
+
+//Resolutions from ($lb-md) 768px to 991.99px ($lb-lg-min)
+@media screen and (min-width: $lb-md) and (max-width: $lb-lg-min) {
+
+}
+
+//Resolutions below starting from 767.99px ($lb-md-min)
+@media screen and (max-width: $lb-md-min) {
+
+}
+
+//Resolutions from ($lb-sm) 576px to 767.99px ($lb-md-min)
+@media screen and (min-width: $lb-sm) and (max-width: $lb-md-min) {
+
+}
+
+//Resolutions below starting from 575.99px ($lb-sm-min)
+@media screen and (max-width: $lb-sm-min) {
+
+}
+
+//Resolutions from ($lb-xs) 360px to 575.99px ($lb-sm-min)
+@media screen and (min-width: $lb-xs) and (max-width: $lb-sm-min) {
+
+}
+
+//Resolutions below starting from 359.99px ($lb-xs-min)
+@media screen and (max-width: $lb-xs-min) {
+
+}

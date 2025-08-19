@@ -1,0 +1,24 @@
+@use "include" as *;
+
+
+//Resolutions below starting from 575.99px ($lb-sm-min)
+@media screen and (max-width: $lb-sm-min) {
+	.hamburger-toggle {
+		&:checked ~ .nav-menu {
+			width: 100%;
+		}
+	}
+}
+
+//Resolutions from ($lb-xs) 360px to 575.99px ($lb-sm-min)
+@media screen and (min-width: $lb-xs) and (max-width: $lb-sm-min) {
+
+}
+
+//Resolutions below starting from 359.99px ($lb-xs-min)
+@media screen and (max-width: $lb-xs-min) {
+
+}
+
+
+
