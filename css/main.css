@@ -616,7 +616,7 @@ body {
   font-weight: 300;
   font-style: normal;
   color: #262a3f;
-  background: url("../assets/img/first-screen-bg@2x.webp") no-repeat 50% 0%/contain;
+  background: #fff url("../assets/img/first-screen-bg@2x.webp") no-repeat 50% 0%/contain;
   min-height: 100vh;
 }
 
@@ -696,6 +696,14 @@ a:focus {
   font-style: italic;
   color: #85bbb1;
 }
+.heading a {
+  font-style: italic;
+  color: #85bbb1;
+}
+.heading a:hover {
+  color: #e54f3a;
+  text-decoration: none;
+}
 .heading-1 {
   font-size: 4.4rem;
   line-height: 1.18182em;
@@ -738,6 +746,11 @@ a:focus {
 .logo__img {
   display: block;
   color: #fff;
+}
+
+.iframe {
+  border: 0;
+  max-width: 100%;
 }
 
 .hamburger-toggle {
@@ -783,7 +796,7 @@ a:focus {
   height: 3px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #f1897b;
+  background: #f1897b;
   opacity: 1;
   transition: width 1s ease-in-out, opacity 0.8s ease-in-out;
 }
@@ -793,7 +806,7 @@ a:focus {
 .nav-menu__link:hover::after {
   opacity: 0.3;
   width: 100%;
-  background-color: #f1897b;
+  background: #f1897b;
   transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
@@ -871,6 +884,70 @@ a:focus {
 }
 .quote-section__block {
   max-width: 710px;
+}
+.video-section {
+  padding-inline: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-outer {
+  order: -1;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 32px;
+  aspect-ratio: 970/601;
+  background: url("../assets/img/screensaver-for-video-no-button.webp") no-repeat center/cover;
+}
+.video-outer:before {
+  content: none;
+  position: absolute;
+  background-color: #262a3f;
+  outline: 1px solid #85bbb1;
+  left: 3.3%;
+  right: 7.3%;
+  width: 89.4%;
+  height: 89.6%;
+  border-radius: 5px;
+}
+.video-outer::after {
+  content: url("../assets/img/svg/small/icon_play.svg");
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 120px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.video-outer.button-clicked {
+  outline: 2px solid #85bbb1;
+}
+.video-outer.button-clicked::before {
+  content: "";
+}
+.video-outer.button-clicked::after {
+  content: none;
+}
+.video-outer:hover::after {
+  opacity: 1;
+}
+.video-outer__iframe {
+  position: absolute;
+  left: 3.3%;
+  right: 7.3%;
+  width: 89.4%;
+  max-height: 89.6%;
+  height: auto;
+  aspect-ratio: auto 16/9;
 }
 .bottom-footer {
   font-size: 1.4rem;

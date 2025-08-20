@@ -12,7 +12,7 @@ body {
 	font-weight: $font-weight-global;
 	font-style: normal;
 	color: $text-color-primary;
-	background: $background-image-global-big no-repeat 50% 0% /contain;
+	background: $background-color-global $background-image-global-big no-repeat 50% 0% /contain;
 	min-height: 100vh;
 }
 
@@ -92,6 +92,14 @@ a {
 		font-style: italic;
 		color: $accent-color-primary;
 	}
+	& a {
+		font-style: italic;
+		color: $accent-color-primary;
+		&:hover {
+			color: $buttons-color-secondary;
+			text-decoration: none;
+		}
+	}
 	&-1 {
 		font-size: 4.4rem;
 		line-height: 1.18182em;
@@ -141,6 +149,12 @@ a {
 	}
 }
 
+.iframe {
+	border:0;
+	max-width: 100%;
+}
+
+
 .hamburger-toggle {
 	display: none;
 }
@@ -185,7 +199,7 @@ a {
 			height: 3px;
 			left: 50%;
 			transform: translateX(-50%);
-			background-color: $buttons-color-primary;
+			background: $nav-links-hover-bg;
 			opacity: 1;
 			transition: width 1s ease-in-out, opacity 0.8s ease-in-out;
 		}
@@ -194,7 +208,7 @@ a {
 			&::after {
 				opacity: 0.3;
 				width: 100%;
-				background-color: $buttons-color-primary;
+				background: $nav-links-hover-bg;
 				transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
 			}
 		}
@@ -290,6 +304,81 @@ a {
 	}
 	&__content {
 
+	}
+}
+
+.video-section {
+	padding-inline: 100px;
+	display: flex;
+	flex-direction: column;
+}
+
+.video-outer {
+	order: -1;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	margin-bottom: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 32px;	
+	// padding-top: 56.25%; /* 16:9 Aspect Ratio */
+	aspect-ratio: 970/601;
+	background: url("../assets/img/screensaver-for-video-no-button.webp") no-repeat center /cover;
+	&:before {
+		content: none;
+		position: absolute;
+		background-color: $text-color-primary;
+		outline: 1px solid $accent-color-primary;
+		left: 3.3%;
+		right: 7.3%;
+		width: 89.4%;
+		height: 89.6%;
+		border-radius: 5px;
+	}
+	&::after {
+		content: $play-button-bg;
+		position: absolute;
+		display: block;
+		width: 120px;
+		height: 120px;
+		top: 50%;
+		left:50%;
+		transform: translate(-50%, -50%);
+		opacity: 0.5;
+		cursor: pointer;
+		pointer-events: auto;
+	}
+	&.button-clicked {
+		outline: 2px solid $accent-color-primary;
+		&::before {
+			content: "";
+		}
+		&::after {
+			content: none;
+		}
+	}
+	&:hover {
+		&::after {
+			opacity: 1;	
+		}
+	}
+	&__iframe {
+		position: absolute;
+		// top: 3.2%;
+		// bottom: 3.2%;
+		left: 3.3%;
+		right: 7.3%;
+		// border: 1px solid $accent-color-primary;
+		width: 89.4%;
+		max-height: 89.6%;
+		height: auto;
+		aspect-ratio: auto 16/9;
+		// margin: 3.2% 7.3% 3.2% 3.3%;
+		&:after{
+
+		}
 	}
 }
 

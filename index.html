@@ -91,7 +91,13 @@
 								<cite class="cite blockquote__author">Lennon Burnett, Solis Group CEO</cite>
 							</p>
 						</blockquote>
-						
+					</section>
+
+					<section class="section main-content__section video-section">
+						<h2 class="heading heading-2 video-section__heading-2">A <a class="link" href="#">powerful API</a> , easy to use user interface</h2>
+						<div id="video-placeholder" class="video-outer"></div>
+						<p>Our API allows all members to interact with Stablehouse&#39;s platform, from effecting transfers to deposits, withdrawals, creation and redemption and reporting.</p>
+
 					</section>
 
 				</div>
@@ -114,5 +120,13 @@
 					</div>
 				</div>	
 			</footer>
+			<script>
+    document.getElementById('video-placeholder').addEventListener("click", function(e) {
+		if (window.getComputedStyle(this, "::after").content !== "none") {
+			this.classList.add("button-clicked");
+			this.innerHTML = '<iframe class="iframe video-outer__iframe" width="560" height="315" src="https://www.youtube.com/embed/vnbN9V_2Guk?si=WanVeBuyIg_Ttvwl&autoplay=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+		}
+	});
+</script>
 	</body>
 </html>
