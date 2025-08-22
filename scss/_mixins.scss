@@ -9,28 +9,14 @@
   flex-direction: $direction;
 }
 
-// @include flex-center(space-between, center);
-// @mixin flex-ajust($justify, $align) {
-// 	display: flex;
-// 	justify-content: $justify;
-// 	align-items: $align;
-// }
-
-// @include flex-center(space-between, center, column);
-// @mixin flex-placement($justify, $align, $direction) {
-// 	display: flex;
-// 	flex-direction: $direction;
-// 	justify-content: $justify;
-// 	align-items: $align;
-// }
-
-// @include flex-extended;
-// @include flex-extended(space-between, center, column, 20px, 30px);
-// @include flex-extended(space-between, center, column, null, null, $gap: 20px 30px);
-// @include flex-extended(space-between, flex-start, column, $row-gap: 30px);
-// @include flex-extended($row-gap: 20px, $column-gap: 30px);
-// @include flex-extended(align: space-between, $column-gap: 30px);
-@mixin flex-extended($justify: center, $align: center, $direction: null, $gap: null) {
+// @include flex-ext;
+// @include flex-ext($gap: 30px);
+// @include flex-ext($gap: 20px 30px);
+// @include flex-ext(space-between, center, column, 20px 30px);
+// @include flex-ext(space-between, center, null, $gap: 30px);
+// @include flex-ext(space-between, flex-start, column, $gap: 30px);
+// @include flex-ext($align: space-between, $gap: 30px);
+@mixin flex-ext($justify: center, $align: center, $direction: null, $gap: null, $wrap: null) {
 	display: flex;
 	justify-content: $justify;
 	align-items: $align;
@@ -39,6 +25,21 @@
 	}
 	@if $gap != null {
 		gap: $gap;
+	}
+	@if $wrap != null {
+		flex-wrap: $wrap;
+	}
+}
+
+// @include font-b(1.5rem, 400, 1.8em, #fff);
+// @include font-b(1.5rem, 400, 1.8em);
+// @include font-b(1.5rem, null, 1.8em);
+@mixin font-b($fz, $fw, $lh, $clr: null) {
+	font-size: $fz;
+	font-weight: $fw;
+	line-height: $lh;
+	@if $clr != null {
+		color: $clr;
 	}
 }
 
@@ -51,20 +52,24 @@
                    #{$max}px);
 }
 
-@mixin avh-center($pos: absolute) {
+@mixin avh-c($pos: absolute) {
   position: $pos;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-@mixin av-center($pos: absolute) {
+@mixin ah-c($pos: absolute) {
+  position: $pos;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin av-c($pos: absolute) {
   position: $pos;
   top: 50%;
   transform: translateY(-50%);
 }
-
-
 
 @mixin v-hid {
   position: absolute !important;

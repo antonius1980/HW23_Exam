@@ -44,10 +44,11 @@ a {
 
 .btn {
 	// font-family: "Lato", sans-serif;
-	font-size: 2rem;
-	font-weight: 700;
-	line-height: 1em;
-	color: $buttons-color-primary;
+	@include font-b(2rem, 700, 1em, $buttons-color-primary);
+	// font-size: 2rem;
+	// font-weight: 700;
+	// line-height: 1em;
+	// color: $buttons-color-primary;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
 
@@ -164,9 +165,10 @@ a {
 
 	}
 	&__nav {
-		display: flex;
-		justify-content: flex-end;
-		align-items: center;
+		@include flex-ext(flex-end, center);
+		// display: flex;
+		// justify-content: flex-end;
+		// align-items: center;
 		flex-grow: 0;
 	}
 }
@@ -199,9 +201,10 @@ a {
 
 
 .nav-menu {
-	display: flex;
-	flex-direction: row;
-	gap: 30px;
+	@include flex-ext(null, null, row, 30px);
+	// display: flex;
+	// flex-direction: row;
+	// gap: 30px;
 
 	position: relative;
 	width: auto;
@@ -233,12 +236,14 @@ a {
 
 		&::after {
 			content: "";
-			position: absolute;
+			@include ah-c;
+			// position: absolute;
+			// left: 50%;
+			// transform: translateX(-50%);
+
 			width: 0%;
 			height: 3px;
 			bottom: 0px;
-			left: 50%;
-			transform: translateX(-50%);
 			background: $nav-links-hover-bg;
 			opacity: 1;
 			transition: width 1s ease-in-out, opacity 0.8s ease-in-out;
@@ -273,11 +278,14 @@ a {
 }
 
 .benefits-section {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	flex-flow: wrap row;
-	gap: 90px 30px;
+	@include flex-ext(space-between,flex-start, row, 90px 30px, wrap);
+	// display: flex;
+	// justify-content: space-between;
+	// align-items: flex-start;
+	// flex-direction: row;
+	// gap: 90px 30px;
+	// flex-wrap: wrap;
+
 	& .heading-2 {
 		max-width: 96%;
 		margin-bottom: 30px;
@@ -344,8 +352,9 @@ a {
 }
 
 .video-section {
-	display: flex;
-	flex-direction: column;
+	@include flex-ext(null,null,column);
+	// display: flex;
+	// flex-direction: column;
 
 	padding-inline: 100px;
 	&__video-container {
@@ -360,17 +369,20 @@ a {
 	&::before,
 	&::after {
 		content: "";
-		position: absolute;
+		@include av-c;
+		// position: absolute;
+		// top: 50%;
+		// transform: translateY(-50%);
 		aspect-ratio: 1/1;
 		width: 1.35%;
 		height: auto;
-		top: 50%;
+
 		left:1%;
 
 
 		border: 1px solid $border-color-primary;
 		border-radius: 50%;
-		transform: translateY(-50%);
+
 	}
 
 	&::after {
@@ -381,9 +393,10 @@ a {
 	}	
 
 	&__video-outer {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@include flex-center(null);
+		// display: flex;
+		// justify-content: center;
+		// align-items: center;
 
 		position: relative;
 		aspect-ratio: auto $video-aspect-ratio;
@@ -408,13 +421,16 @@ a {
 		&::after {
 			content: $play-button-bg;
 			display: block;
-			position: absolute;
+
 			width: 120px;
 			height: 120px;
-			top: 50%;
-			left:50%;
 
-			transform: translate(-50%, -50%);
+			@include avh-c;
+			// position: absolute;
+			// top: 50%;
+			// left:50%;
+			// transform: translate(-50%, -50%);
+
 			opacity: 0.5;
 
 			cursor: pointer;
@@ -455,9 +471,10 @@ a {
 .bottom-footer {
 	font-size: 1.4rem;
 	&__container {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		@include flex-ext(space-between, center);
+		// display: flex;
+		// justify-content: space-between;
+		// align-items: center;
 
 		padding: 30px 0;
 
