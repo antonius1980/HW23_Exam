@@ -1,4 +1,5 @@
 @use "functions" as *;
+@use "sass:math";
 
 // Main vars
 $font-size-html: 10px;
@@ -12,6 +13,7 @@ $container-width-max: 1170px;
 $container-padding: 25px;
 
 $btn--big-inline-padding: 90px;
+$video-aspect-ratio: math.div(16, 9);
 
 $background-color-global: #fff;
 $background-image-global: url("../assets/img/first-screen-bg.webp");

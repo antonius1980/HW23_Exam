@@ -6,20 +6,19 @@ html {
 
 body {
 	font-family: $font-family-global;
-	background: $background-color-global;
+	font-style: normal;
 	font-size: $font-size-global;
 	line-height: $line-height-global;
 	font-weight: $font-weight-global;
-	font-style: normal;
 	color: $text-color-primary;
+
 	background: $background-color-global $background-image-global-big no-repeat 50% 0% /contain;
-	min-height: 100vh;
 }
 
 .container {
+	width: $container-width;
 	max-width: calc($container-width-max + $container-padding * 2);
 	margin: 0 auto;
-	width: $container-width;
 	padding-left: $container-padding;
 	padding-right: $container-padding;
 }
@@ -31,48 +30,62 @@ a {
 		text-decoration: underline;
 	}
 	&:focus {
-		outline: 2px solid $accent-color-primary;
+		outline: 0px solid $accent-color-primary;
 	}
 }
 
 .btn {
-	position: relative;
+	// font-family: "Lato", sans-serif;
 	font-size: 2rem;
 	font-weight: 700;
 	line-height: 1em;
+	color: $buttons-color-primary;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
-	color: $buttons-color-primary;
-	background-color: transparent;
-	font-family: "Lato", sans-serif;
-	    transform-style: preserve-3d;
-		perspective: 200px;
+
 	display: inline-block;
+	position: relative;
+
+	background-color: transparent;
+	transform-style: preserve-3d;
+	perspective: 200px;
 	&::after {
 		content: "";
 		position: absolute;
-		left:10px;
-		top: 50%;
-		opacity: 0.3;
 		width: 100%;
 		height: 13px;
+		top: 50%;
+		left:10px;
+
+		opacity: 0.3;
 		background-color: $buttons-color-primary;
-			transform: rotateY(0deg);
-			transition: all 0.9s ease-in-out;
+		transform: rotateY(0deg);
+		transition: all 0.9s ease-in-out;
 		
 	}
 	&:hover {
 		color: $buttons-color-secondary;
 		text-decoration: none;
 			&::after {
-					transform: rotateY(180deg);
-					transition: all 0.3s ease-in-out;
+				transform: rotateY(180deg);
+				transition: all 0.3s ease-in-out;
 				background-color: $buttons-border-color-secondary;
 			}
 	}
+	&:focus {
+		color: $buttons-color-primary;
+			&::after {
+				transform: scale(1.5);
+				left:0;
+				height: 1em;
+				background-color: $buttons-border-color-secondary;
+				transform: rotateY(150deg);
+				opacity: 0.2;
+			}
+	}
 	&--big {
-		border: 1px solid $buttons-border-color-primary;
 		padding: 33px $btn--big-inline-padding;
+		border: 1px solid $buttons-border-color-primary;
 		&::after {
 			width: calc(100% - $btn--big-inline-padding * 2);
 			left: calc(10px + $btn--big-inline-padding);
@@ -80,14 +93,26 @@ a {
 		&:hover {
 			border-color: $buttons-border-color-secondary;
 		}
+		&:focus {
+
+			&::after {
+				transform: scale(1);
+				left:0;
+				top:0;
+				height: 100%;
+				width: 100%;
+				transform: translate(-50% -50%);
+				opacity: 0.1;
+			}			
+		}
 	} 
 }
 
 .heading {
 	font-family: $font-family-headings;
 	font-weight: 400;
-	letter-spacing: normal;
 	color: $font-color-heading;
+	letter-spacing: normal;
 	& em {
 		font-style: italic;
 		color: $accent-color-primary;
@@ -126,6 +151,7 @@ a {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
 		min-height: 80px;
 
 	}
@@ -150,8 +176,8 @@ a {
 }
 
 .iframe {
-	border:0;
 	max-width: 100%;
+	border:0;
 }
 
 
@@ -168,34 +194,41 @@ a {
 	display: flex;
 	flex-direction: row;
 	gap: 30px;
-	padding: 10px 0px 10px 30px;
 
 	position: relative;
-	right: auto;
-	top: auto;
 	width: auto;
-	background-color: transparent;
+	top: auto;
+	right: auto;
+
+	padding: 10px 0px 10px 30px;
+
 	border: 0px none;
+	background-color: transparent;
+
 	opacity: 1;
 	&__item {
 		border: none;
 	}
 	&__link {
-		display: block;
-		position: relative;
 		font-size: 1.4rem;
 		font-weight: 400;
 		line-height: 24px;
 		color: $text-color-primary;
-		transition: all 0.8s ease-in-out;
-		padding: 0px;
 		letter-spacing: 0.07em;
+
+		display: block;
+		position: relative;
+		padding: 0px;
+
+		transition: all 0.8s ease-in-out;
+
+
 		&::after {
 			content: "";
 			position: absolute;
-			bottom: 0px;
 			width: 0%;
 			height: 3px;
+			bottom: 0px;
 			left: 50%;
 			transform: translateX(-50%);
 			background: $nav-links-hover-bg;
@@ -221,12 +254,13 @@ a {
 }
 
 .hero-section {
-	padding: 150px 0;
 	max-width: 523px;
+	padding: 150px 0;
+
 	& p {
-		margin-bottom: 50px;
 		letter-spacing: 0.01em;
 		max-width: 84%;
+		margin-bottom: 50px;
 	}
 }
 
@@ -237,22 +271,26 @@ a {
 	flex-flow: wrap row;
 	gap: 90px 30px;
 	& .heading-2 {
-		margin-bottom: 30px;
 		max-width: 96%;
+		margin-bottom: 30px;
 	}
 	&__block {
-		padding: 20px 35px;
 		flex: 1 1 48%;
+
+		position: relative;
 		max-width: 70%;
 		min-height: 250px;
-		position: relative;
+		padding: 20px 35px;
+
 		&::before {
 			content: "";
 			position: absolute;
-			top: -30px;
-			left:0;
 			width:100%;
 			height: 1px;
+			top: -30px;
+			left:0;
+
+
 			border-top: 1px solid $border-color-primary;
 		}
 	}
@@ -262,9 +300,9 @@ a {
 }
 
 .blockquote {
-	background: $quote-icon-image no-repeat left top;
-	padding: 30px 0 0 60px;
 	letter-spacing: 0.04em;
+	padding: 30px 0 0 60px;
+	background: $quote-icon-image no-repeat left top;
 	&__content {
 	font-size: 3.2rem;
 	line-height: 1.44em;
@@ -276,112 +314,38 @@ a {
 	&__author {
 		font-family: $font-family-headings;
 		font-style: italic;
-		font-weight: 400;
 		font-size: 2rem;
 		line-height: 1em;	
+		font-weight: 400;
 		letter-spacing: 0.08em;
 	}
 }
 
 .quote-section {
-	background: $text-color-primary url("../assets/img/quote-background.webp") no-repeat center center / cover;
+	font-weight: 400;
 	color: $light-color-primary;
+
 	min-height: 400px;
 	padding: 70px 300px 100px 100px;
-	font-weight: 400;
+
+	background: $text-color-primary url("../assets/img/quote-background.webp") no-repeat center center / cover;
+
 	&__block {
 		max-width: 710px;
 	}
 }
 
 .video-section {
-	padding-inline: 100px;
 	display: flex;
 	flex-direction: column;
-}
 
-.video-outer {
-	order: -1;
-	position: relative;
-	overflow: hidden;
-	width: 100%;
-	margin-bottom: 50px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 32px;	
-	// padding-top: 56.25%; /* 16:9 Aspect Ratio */
-	aspect-ratio: 970/601;
-	background: url("../assets/img/screensaver-for-video-no-button.webp") no-repeat center /cover;
-	outline: 1px solid $border-color-primary;
-	&:before {
-		content: none;
-		position: absolute;
-		background-color: $text-color-primary;
-		outline: 1px solid $accent-color-primary;
-		left: 3.3%;
-		right: 7.3%;
-		width: 89.4%;
-		height: 89.6%;
-		border-radius: 5px;
-	}
-	&::after {
-		content: $play-button-bg;
-		position: absolute;
-		display: block;
-		width: 120px;
-		height: 120px;
-		top: 50%;
-		left:50%;
-		transform: translate(-50%, -50%);
-		opacity: 0.5;
-		cursor: pointer;
-		pointer-events: auto;
-	}
-	&.initiated {
-		outline: 2px solid $accent-color-primary;
-		&::before {
-			content: "";
-		}
-		&::after {
-			content: none;
-		}
-	}
-	&:hover {
-		&::after {
-			opacity: 1;	
-		}
-	}
-	&__iframe {
-		position: absolute;
-		// top: 3.2%;
-		// bottom: 3.2%;
-		left: 3.3%;
-		right: 7.3%;
-		// border: 1px solid $accent-color-primary;
-		width: 89.4%;
-		max-height: 89.6%;
-		height: auto;
-		aspect-ratio: auto 16/9;
-		border-radius: 5px;
-		// margin: 3.2% 7.3% 3.2% 3.3%;
-		&:after{
-
-		}
-	}
-}
-
-
-// testing start
-.video-section-test {
 	padding-inline: 100px;
-	display: flex;
-	flex-direction: column;
-	&__video-container-test {
+	&__video-container {
 		order: -1;
 	}
 }
-.video-container-test {
+
+.video-container {
 	position: relative;
 	width: 100%;
 	margin-bottom: 50px;
@@ -389,53 +353,63 @@ a {
 	&::after {
 		content: "";
 		position: absolute;
-		border: 1px solid $border-color-primary;
+		aspect-ratio: 1/1;
+		width: 1.35%;
+		height: auto;
 		top: 50%;
-		transform: translateY(-50%);
 		left:1%;
-		width: 13px;
-		height: 13px;
+
+
+		border: 1px solid $border-color-primary;
 		border-radius: 50%;
+		transform: translateY(-50%);
 	}
 
 	&::after {
-		width: 35px;
-		height: 35px;
+		width: 3.6%;
+		height: auto;
 		left: auto;
 		right: 1.8%;
 	}	
 
-	&__video-outer-test {
+	&__video-outer {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 100%;
+
 		position: relative;
+		aspect-ratio: auto $video-aspect-ratio;
+		width: 100%;
+
 		border-radius: 32px;	
-		aspect-ratio: auto 16/9;
 		outline: 1px solid $border-color-primary;
+
 		&:before {
 			content: "";
 			position: absolute;
-			background-color: $text-color-primary;
-			outline: 1px solid $border-color-primary;
-			left: 3.3%;
-			right: 7.3%;
 			width: 89.4%;
 			height: 89.6%;
+			left: 3.3%;
+			right: 7.3%;
+
+			background: url("../assets/img/screensaver-only-for-video.webp") no-repeat center / cover;
+
+			outline: 1px solid $border-color-primary;
 			border-radius: 5px;
-			background: url("../assets/img/screensaver-for-video-inner-no-button.webp") no-repeat center / 101%;
+
 		}
 		&::after {
 			content: $play-button-bg;
-			position: absolute;
 			display: block;
+			position: absolute;
 			width: 120px;
 			height: 120px;
 			top: 50%;
 			left:50%;
+
 			transform: translate(-50%, -50%);
 			opacity: 0.5;
+
 			cursor: pointer;
 			pointer-events: auto;
 		}
@@ -459,25 +433,27 @@ a {
 	}
 	&__iframe {
 		position: absolute;
+		aspect-ratio: auto 16/19;
+		width: 89.5%;
+		height: auto;
+		max-height: 89.5%;
 		left: 3.3%;
 		right: 7.4%;
-		border: 1px solid $accent-color-primary;
-		width: 89.4%;
-		max-height: 89.6%;
-		height: auto;
-		aspect-ratio: auto 16/9;
+
+		outline: 1px solid $accent-color-primary;
 		border-radius: 5px;
 	}
 }
-// testing end
 
 .bottom-footer {
 	font-size: 1.4rem;
 	&__container {
-		padding: 30px 0;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
+		padding: 30px 0;
+
 	}
 	& p span {
 		opacity: 0.6;
