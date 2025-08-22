@@ -131,9 +131,18 @@
 				document.getElementById('video-placeholder').addEventListener("click", function(e) {
 					if (window.getComputedStyle(this, "::after").content !== "none") {
 						this.classList.add("initiated");
-						this.innerHTML = '<iframe class="iframe video-container__iframe" width="560" height="315" src="https://www.youtube.com/embed/vnbN9V_2Guk?si=WanVeBuyIg_Ttvwl&autoplay=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+						this.innerHTML = '<iframe class="iframe video-container__iframe" width="560" height="315" src="https://www.youtube.com/embed/vnbN9V_2Guk?si=WanVeBuyIg_Ttvwl&autoplay=1&controls=0&showinfo=0&rel=0&loop=1&playlist=vnbN9V_2Guk" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
 					}
 				});
 			</script>
+			<button class="switch-theme">
+				<svg class="switch-theme__dark" width="102" height="84">
+					<use xlink:href="./assets/img/svg/sprite/sprite.svg#quote-icon-red"></use>
+				</svg>
+				<svg class="switch-theme__light" width="102" height="84">
+					<use xlink:href="./assets/img/svg/sprite/sprite.svg#quote-icon-green"></use>
+				</svg>
+			</button>
+
 	</body>
 </html>

@@ -624,8 +624,8 @@ body {
   margin: 0 auto;
   padding-left: 25px;
   padding-right: 25px;
+  /* Testing breakpoint mixin */
 }
-
 a {
   color: #689ff2;
   text-decoration: none;
@@ -953,6 +953,7 @@ a:focus {
   background: url("../assets/img/screensaver-only-for-video.webp") no-repeat center/cover;
   outline: 1px solid #515773;
   border-radius: 5px;
+  cursor: pointer;
 }
 .video-container__video-outer::after {
   content: url("../assets/img/svg/small/icon_play_dark.svg");

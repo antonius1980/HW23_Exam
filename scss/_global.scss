@@ -21,6 +21,8 @@ body {
 	margin: 0 auto;
 	padding-left: $container-padding;
 	padding-right: $container-padding;
+	/* Testing breakpoint mixin */
+	@include m-max(lg)
 }
 
 a {
@@ -393,10 +395,9 @@ a {
 			right: 7.3%;
 
 			background: url("../assets/img/screensaver-only-for-video.webp") no-repeat center / cover;
-
 			outline: 1px solid $border-color-primary;
 			border-radius: 5px;
-
+			cursor: pointer;
 		}
 		&::after {
 			content: $play-button-bg;
