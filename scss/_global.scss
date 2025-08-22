@@ -70,12 +70,12 @@ a {
 				background-color: $buttons-border-color-secondary;
 			}
 	}
-	&-big {
+	&--big {
 		border: 1px solid $buttons-border-color-primary;
-		padding: 33px $btn-big-inline-padding;
+		padding: 33px $btn--big-inline-padding;
 		&::after {
-			width: calc(100% - $btn-big-inline-padding * 2);
-			left: calc(10px + $btn-big-inline-padding);
+			width: calc(100% - $btn--big-inline-padding * 2);
+			left: calc(10px + $btn--big-inline-padding);
 		}
 		&:hover {
 			border-color: $buttons-border-color-secondary;
@@ -159,11 +159,10 @@ a {
 	display: none;
 }
 
-.top-header {
-	&__hamburger-toggle-label {
-		display: none;
-	}
+.hamburger-toggle-label {
+	display: none;
 }
+
 
 .nav-menu {
 	display: flex;
@@ -224,7 +223,7 @@ a {
 .hero-section {
 	padding: 150px 0;
 	max-width: 523px;
-	&__content {
+	& p {
 		margin-bottom: 50px;
 		letter-spacing: 0.01em;
 		max-width: 84%;
@@ -237,10 +236,16 @@ a {
 	align-items: flex-start;
 	flex-flow: wrap row;
 	gap: 90px 30px;
-	&__heading-2 {
+	& .heading-2 {
+		margin-bottom: 30px;
+		max-width: 96%;
 	}
 	&__block {
+		padding: 20px 35px;
 		flex: 1 1 48%;
+		max-width: 70%;
+		min-height: 250px;
+		position: relative;
 		&::before {
 			content: "";
 			position: absolute;
@@ -251,22 +256,7 @@ a {
 			border-top: 1px solid $border-color-primary;
 		}
 	}
-	&__content {
-	}
-
-}
-
-.section-block {
-		padding: 20px 35px;
-		position: relative;
-		max-width: 70%;
-		min-height: 250px;
-	&__heading-2 {
-		margin-bottom: 30px;
-		max-width: 96%;
-	}
-	&__content {
-
+	& p {
 	}
 
 }
@@ -302,9 +292,6 @@ a {
 	&__block {
 		max-width: 710px;
 	}
-	&__content {
-
-	}
 }
 
 .video-section {
@@ -326,6 +313,7 @@ a {
 	// padding-top: 56.25%; /* 16:9 Aspect Ratio */
 	aspect-ratio: 970/601;
 	background: url("../assets/img/screensaver-for-video-no-button.webp") no-repeat center /cover;
+	outline: 1px solid $border-color-primary;
 	&:before {
 		content: none;
 		position: absolute;
@@ -350,7 +338,7 @@ a {
 		cursor: pointer;
 		pointer-events: auto;
 	}
-	&.button-clicked {
+	&.initiated {
 		outline: 2px solid $accent-color-primary;
 		&::before {
 			content: "";
@@ -375,12 +363,113 @@ a {
 		max-height: 89.6%;
 		height: auto;
 		aspect-ratio: auto 16/9;
+		border-radius: 5px;
 		// margin: 3.2% 7.3% 3.2% 3.3%;
 		&:after{
 
 		}
 	}
 }
+
+
+// testing start
+.video-section-test {
+	padding-inline: 100px;
+	display: flex;
+	flex-direction: column;
+	&__video-container-test {
+		order: -1;
+	}
+}
+.video-container-test {
+	position: relative;
+	width: 100%;
+	margin-bottom: 50px;
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		border: 1px solid $border-color-primary;
+		top: 50%;
+		transform: translateY(-50%);
+		left:1%;
+		width: 13px;
+		height: 13px;
+		border-radius: 50%;
+	}
+
+	&::after {
+		width: 35px;
+		height: 35px;
+		left: auto;
+		right: 1.8%;
+	}	
+
+	&__video-outer-test {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		position: relative;
+		border-radius: 32px;	
+		aspect-ratio: auto 16/9;
+		outline: 1px solid $border-color-primary;
+		&:before {
+			content: "";
+			position: absolute;
+			background-color: $text-color-primary;
+			outline: 1px solid $border-color-primary;
+			left: 3.3%;
+			right: 7.3%;
+			width: 89.4%;
+			height: 89.6%;
+			border-radius: 5px;
+			background: url("../assets/img/screensaver-for-video-inner-no-button.webp") no-repeat center / 101%;
+		}
+		&::after {
+			content: $play-button-bg;
+			position: absolute;
+			display: block;
+			width: 120px;
+			height: 120px;
+			top: 50%;
+			left:50%;
+			transform: translate(-50%, -50%);
+			opacity: 0.5;
+			cursor: pointer;
+			pointer-events: auto;
+		}
+		&.initiated {
+			outline: 2px solid $accent-color-primary;
+			&::before {
+				content: "";
+			}
+			&::after {
+				content: none;
+			}
+		}
+		&:hover {
+			&::after {
+				opacity: 1;	
+				zoom: 1.2;
+				outline: 2px solid $accent-color-primary;
+				border-radius: 50%;
+			}
+		}
+	}
+	&__iframe {
+		position: absolute;
+		left: 3.3%;
+		right: 7.4%;
+		border: 1px solid $accent-color-primary;
+		width: 89.4%;
+		max-height: 89.6%;
+		height: auto;
+		aspect-ratio: auto 16/9;
+		border-radius: 5px;
+	}
+}
+// testing end
 
 .bottom-footer {
 	font-size: 1.4rem;

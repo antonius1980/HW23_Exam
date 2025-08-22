@@ -22,8 +22,10 @@
 						</a>
 					</div>
 					<nav class="nav top-header__nav">
-						<input class="top-header__hamburger-toggle hamburger-toggle" type="checkbox" id="hamburger-toggle">
-						<label class="hamburger-toggle-label top-header__hamburger-toggle-label" for="hamburger-toggle"><span class="hamburger-toggle-img"></span></label>
+						<input class="hamburger-toggle" type="checkbox" id="hamburger-toggle">
+						<label class="hamburger-toggle-label" for="hamburger-toggle">
+							<span class="hamburger-toggle-img"></span>
+						</label>
 						<ul class="menu nav-menu">
 							<li class="nav-menu__item"><a href="#" class="nav-menu__link">Home</a></li>
 							<li class="nav-menu__item"><a href="#" class="nav-menu__link">About</a></li>
@@ -38,48 +40,48 @@
 			<main class="main main-content">
 				<div class="container main-content__container">
 					<section class="section main-content__section hero-section">
-						<h1 class="heading heading-1 hero-section__heading-1">
+						<h1 class="heading heading-1">
 							A peer-to-peer stablecoin <em>clearinghouse</em> for the new economy
 						</h1>
-						<p class="hero-section__content">
+						<p>
 							We are bringing real solutions to the payments world by leveraging public blockchains.
 						</p>
-						<a class="btn btn" href="#" target="_self">Join Now</a>
+						<a class="btn" href="#" target="_self">Join Now</a>
 					</section>
 
 					<section class="section main-content__section benefits-section">
-						<article class="article section-block benefits-section__block">
-							<h2 class="heading heading-2 section-block__heading-2 benefits-section__heading-2">
+						<div class="benefits-section__block">
+							<h2 class="heading heading-2">
 								Qualified <em>traders</em> and liquidty <em>solutions</em>
 							</h2>
-							<p class="section-block__content benefits-section__content">
+							<p>
 								Trade easily and efficiently between 12 stablecoins, including USDT, TrueUSD, Dai, Eurs and Gemini Dollar.
 							</p>
-						</article>
-						<article class="article section-block benefits-section__block">
-							<h2 class="heading heading-2 section-block__heading-2 benefits-section__heading-2">
+						</div>
+						<div class="benefits-section__block">
+							<h2 class="heading heading-2">
 								Settlement/OTC API and <em>integration</em>
 							</h2>
-							<p class="section-block__content benefits-section__content">
+							<p>
 								Integrate OTC operations and settlements using our efficient API.
 							</p>
-						</article>
-						<article class="article section-block benefits-section__block">
-							<h2 class="heading heading-2 section-block__heading-2 benefits-section__heading-2">
+						</div>
+						<div class="benefits-section__block">
+							<h2 class="heading heading-2">
 								The best <em>payments solutions</em>
 							</h2>
-							<p class="section-block__content benefits-section__content">
+							<p>
 								For all stablecoin payments, from point-of-sale transactions to website solutions. If you use stablecoins in your business, Stablehouse is for you.
 							</p>
-						</article>
-						<article class="article section-block benefits-section__block">
-							<h2 class="heading heading-2 section-block__heading-2 benefits-section__heading-2">
+						</div>
+						<div class="benefits-section__block">
+							<h2 class="heading heading-2">
 								<em>Treasury</em> and <em>returns</em> for&nbsp;stablecoin stores
 							</h2>
-							<p class="section-block__content benefits-section__content">
+							<p>
 								Automate your stablecoin store with instant payments and on-the-fly conversion between different stablecoins.
 							</p>
-						</article>
+						</div>
 					</section>
 
 					<section class="section main-content__section quote-section">
@@ -94,10 +96,23 @@
 					</section>
 
 					<section class="section main-content__section video-section">
-						<h2 class="heading heading-2 video-section__heading-2">A <a class="link" href="#">powerful API</a> , easy to use user interface</h2>
-						<div id="video-placeholder" class="video-outer"></div>
+						<h2 class="heading heading-2 video-section__heading">
+							A <a class="link" href="#">powerful API</a> , easy to use user interface
+						</h2>
+						<div id="video-placeholder" class="video-outer video-section__video-outer"></div>
 						<p>Our API allows all members to interact with Stablehouse&#39;s platform, from effecting transfers to deposits, withdrawals, creation and redemption and reporting.</p>
+					</section>
 
+					<section class="section main-content__section video-section-test">
+						<h2 class="heading heading-2 video-section__heading">
+							A <a class="link" href="#">powerful API</a> , easy to use user interface
+						</h2>
+						<div class="video-container-test video-section-test__video-container-test">
+							<div id="video-placeholder-test" class="video-container-test__video-outer-test">
+							
+							</div>						
+						</div>
+						<p>Our API allows all members to interact with Stablehouse&#39;s platform, from effecting transfers to deposits, withdrawals, creation and redemption and reporting.</p>
 					</section>
 
 				</div>
@@ -121,12 +136,21 @@
 				</div>	
 			</footer>
 			<script>
-    document.getElementById('video-placeholder').addEventListener("click", function(e) {
-		if (window.getComputedStyle(this, "::after").content !== "none") {
-			this.classList.add("button-clicked");
-			this.innerHTML = '<iframe class="iframe video-outer__iframe" width="560" height="315" src="https://www.youtube.com/embed/vnbN9V_2Guk?si=WanVeBuyIg_Ttvwl&autoplay=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
-		}
-	});
-</script>
+				document.getElementById('video-placeholder').addEventListener("click", function(e) {
+					if (window.getComputedStyle(this, "::after").content !== "none") {
+						this.classList.add("initiated");
+						this.innerHTML = '<iframe class="iframe video-outer__iframe" width="560" height="315" src="https://www.youtube.com/embed/vnbN9V_2Guk?si=WanVeBuyIg_Ttvwl&autoplay=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+					}
+				});
+			</script>
+
+			<script>
+				document.getElementById('video-placeholder-test').addEventListener("click", function(e) {
+					if (window.getComputedStyle(this, "::after").content !== "none") {
+						this.classList.add("initiated");
+						this.innerHTML = '<iframe class="iframe video-container-test__iframe" width="560" height="315" src="https://www.youtube.com/embed/vnbN9V_2Guk?si=WanVeBuyIg_Ttvwl&autoplay=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+					}
+				});
+			</script>
 	</body>
 </html>

@@ -3,16 +3,11 @@
 //Resolutions below starting from 991.99px ($lb-lg-min)
 @media screen and (max-width: $lb-lg-min) {
 
-	.top-header {
-		&__hamburger-toggle {
-			&:checked ~ .nav-menu {
-				right: auto;
-				width: auto;
-			}
-		}
-	}
-
 	.hamburger-toggle {
+		&:checked ~ .nav-menu {
+			right: auto;
+			width: auto;
+		}
 		&:checked ~ .hamburger-toggle-label > span { 
 			transform: rotate(45deg);
 		}
@@ -44,7 +39,8 @@
 		position: relative;
 		top: -6px;
 		width: 100%;
-		height: 2px;
+		height: 5px;
+		border-radius: 4px;
 		background-color: $text-color-primary;
 		transition: all 0.3s ease-in-out;
 		&::before,
@@ -52,7 +48,8 @@
 			content: "";
 			position: absolute;
 			width: 100%;
-			height: 2px;
+			height: inherit;
+			border-radius: inherit;
 			background-color: inherit;
 			top: 10px;
 			transition: all 0s ease-in-out;

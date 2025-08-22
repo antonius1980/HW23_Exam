@@ -11,7 +11,7 @@ $container-width: 100%;
 $container-width-max: 1170px;
 $container-padding: 25px;
 
-$btn-big-inline-padding: 90px;
+$btn--big-inline-padding: 90px;
 
 $background-color-global: #fff;
 $background-image-global: url("../assets/img/first-screen-bg.webp");
@@ -55,24 +55,24 @@ $font-color-heading: $text-color-primary;
 // $font-color-heading: $text-color-primary;
 
 /* Theme Dark */
-// $background-color-global: #161926;
-// $background-image-global: url("../assets/img/first-screen-bg-dark.webp");
-// $background-image-global-big: url("../assets/img/first-screen-bg-dark@2x.webp");
-// $quote-icon-image: url("../assets/img/svg/small/quote-icon-green.svg");
-// $text-color-primary: #fff;
-// $text-color-primary-rgb: hex-to-rgb-list($text-color-primary);
-// $accent-color-primary: #689ff2;
-// $border-color-primary: #515773;
-// $light-color-primary: #fff;
-// $buttons-color-primary: #53f3cd;
-// $buttons-color-secondary: #02e0ab;
-// $buttons-border-color-primary: $border-color-primary;
-// $buttons-border-color-secondary: $buttons-color-secondary;
-// $links-color-primary: $accent-color-primary;
-// $links-color-secondary: $buttons-color-secondary;
-// $nav-links-hover-bg: linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%);
-// $play-button-bg: url("../assets/img/svg/small/icon_play_dark.svg");
-// $font-color-heading: $text-color-primary;
+$background-color-global: #161926;
+$background-image-global: url("../assets/img/first-screen-bg-dark.webp");
+$background-image-global-big: url("../assets/img/first-screen-bg-dark@2x.webp");
+$quote-icon-image: url("../assets/img/svg/small/quote-icon-green.svg");
+$text-color-primary: #fff;
+$text-color-primary-rgb: hex-to-rgb-list($text-color-primary);
+$accent-color-primary: #689ff2;
+$border-color-primary: #515773;
+$light-color-primary: #fff;
+$buttons-color-primary: #53f3cd;
+$buttons-color-secondary: #02e0ab;
+$buttons-border-color-primary: $border-color-primary;
+$buttons-border-color-secondary: $buttons-color-secondary;
+$links-color-primary: $accent-color-primary;
+$links-color-secondary: $buttons-color-secondary;
+$nav-links-hover-bg: linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%);
+$play-button-bg: url("../assets/img/svg/small/icon_play_dark.svg");
+$font-color-heading: $text-color-primary;
 
 // Breakpoints mobile first
 //0 - default CSS
