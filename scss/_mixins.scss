@@ -1,3 +1,5 @@
+@use "vars" as *;
+@use "sass:map";
 // @include flex-center;
 // @include flex-center(column);
 @mixin flex-center($direction: row) {
@@ -77,3 +79,100 @@
 @mixin transition($props: all, $time: .3s, $ease: ease) {
   transition: $props $time $ease;
 }
+
+$breakpoints: (
+xxl: $xxl,
+xxl-min: $xxl-min,
+xl: $xl,
+xl-min: $xl-min,
+lg: $lg,
+lg-min: $lg-min,
+md: $md,
+md-min: $md-min,
+sm: $sm,
+sm-min: $sm-min,
+xs: $xs,
+xs-min: $xs-min
+);
+
+// @include m-min(lg) {...}
+@mixin m-min($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "No breakpoint `#{$breakpoint}` in the list.";
+  }
+}
+
+// @include m-max(lg-min) {...}
+@mixin m-max($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (max-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "No breakpoint `#{$breakpoint}` in the list.";
+  }
+}
+
+// @include m-between(md, xl-min) {...}
+@mixin m-between($min, $max) {
+  @if map.has-key($breakpoints, $min) and map.has-key($breakpoints, $max) {
+    @media (min-width: map.get($breakpoints, $min)) and (max-width: map.get($breakpoints, $max)) {
+      @content;
+    }
+  } @else {
+    @warn "No breakpoint `#{$min}` or `#{$max}` in the list.";
+  }
+}
+
+// @include m-min-xmin(md) {...}
+// @include m-min-xmin(sm, 2x) {...}
+@mixin m-min-xmin($min, $xmin: 1x) {
+  @if map.has-key($breakpoints, $min) {
+    @media (min-width: map.get($breakpoints, $min)) and (min-resolution: $xmin) {
+      @content;
+    }
+  } @else {
+    @warn "No breakpoint `#{$min}` in the list.";
+  }
+}
+
+// @include m-min-xmax(md) {...}
+// @include m-min-xmax(sm, 2x) {...}
+@mixin m-min-xmax($min, $xmax: 1x) {
+  @if map.has-key($breakpoints, $min) {
+    @media (min-width: map.get($breakpoints, $min)) and (max-resolution: $xmax) {
+      @content;
+    }
+  } @else {
+    @warn "No breakpoint `#{$min}` in the list.";
+  }
+}
+
+// @include m-max-xmin(md) {...}
+// @include m-max-xmin(sm, 2x) {...}
+@mixin m-max-xmin($max, $xmin: 1x) {
+  @if map.has-key($breakpoints, $max) {
+    @media (max-width: map.get($breakpoints, $max)) and (min-resolution: $xmin) {
+      @content;
+    }
+  } @else {
+    @warn "No breakpoint `#{$max}` in the list.";
+  }
+}
+
+// @include m-max-xmax(md) {...}
+// @include m-max-xmax(sm, 2x) {...}
+@mixin m-max-xmax($max, $xmax: 1x) {
+  @if map.has-key($breakpoints, $max) {
+    @media (max-width: map.get($breakpoints, $max)) and (max-resolution: $xmax) {
+      @content;
+    }
+  } @else {
+    @warn "No breakpoint `#{$max}` in the list.";
+  }
+}
+

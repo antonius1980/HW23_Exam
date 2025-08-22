@@ -616,6 +616,7 @@ body {
   font-weight: 300;
   color: #fff;
   background: #161926 url("../assets/img/first-screen-bg-dark@2x.webp") no-repeat 50% 0%/contain;
+  /* Testing breakpoint mixin for responsive image */
 }
 
 .container {
@@ -626,6 +627,7 @@ body {
   padding-right: 25px;
   /* Testing breakpoint mixin */
 }
+
 a {
   color: #689ff2;
   text-decoration: none;

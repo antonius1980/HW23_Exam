@@ -2,8 +2,8 @@
 
 //Default styles without media queries - Resolutions for widescreen
 
-//Resolutions up from 1400px ($lb-xxl)
-@media screen and (min-width: $lb-xxl) {
+//Resolutions up from 1400px ($xxl)
+@media screen and (min-width: $xxl) {
 	.container {
 		max-width: $container-width-max;
 		padding-inline: 0;
@@ -11,22 +11,22 @@
 }
 
 
-//Resolutions below starting from 1399.99px ($lb-xxl-min)
-@media screen and (max-width: $lb-xxl-min) {
+//Resolutions below starting from 1399.99px ($xxl-min)
+@media screen and (max-width: $xxl-min) {
 
 }
 
-//Resolutions from ($lb-xl) 1200px to 1399.99px ($lb-xxl-min)
-@media screen and (min-width: $lb-xl) and (max-width: $lb-xxl-min) {
+//Resolutions from ($xl) 1200px to 1399.99px ($xxl-min)
+@media screen and (min-width: $xl) and (max-width: $xxl-min) {
 
 }
 
-//Resolutions below starting from 1199.99px ($lb-xl-min)
-@media screen and (max-width: $lb-xl-min) {
+//Resolutions below starting from 1199.99px ($xl-min)
+@media screen and (max-width: $xl-min) {
 
 }
 
-//Resolutions from ($lb-lg) 992px to 1199.99px ($lb-xl-min)
-@media screen and (min-width: $lb-lg) and (max-width: $lb-xl-min) {
+//Resolutions from ($lg) 992px to 1199.99px ($xl-min)
+@media screen and (min-width: $lg) and (max-width: $xl-min) {
 
 }

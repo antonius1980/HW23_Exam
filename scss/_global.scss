@@ -13,6 +13,10 @@ body {
 	color: $text-color-primary;
 
 	background: $background-color-global $background-image-global-big no-repeat 50% 0% /contain;
+	/* Testing breakpoint mixin for responsive image */
+	// @include m-max-xmin(lg, 2x) {
+	// 	background-image: $background-image-global;
+	// }
 }
 
 .container {
@@ -22,7 +26,9 @@ body {
 	padding-left: $container-padding;
 	padding-right: $container-padding;
 	/* Testing breakpoint mixin */
-	@include m-max(lg)
+	// @include m-between(sm,lg-min) {
+	// 	position: fixed;
+	// }
 }
 
 a {

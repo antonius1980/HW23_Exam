@@ -78,67 +78,30 @@ $font-color-heading: $text-color-primary;
 
 // Breakpoints mobile first
 //0 - default CSS
-// $lb-xs-min: 359.99px;
-// $lb-xs: 360px;
-// $lb-sm-min: 575.99px;
-// $lb-sm: 576px;
-// $lb-md-min: 767.99px;
-// $lb-md: 768px;
-// $lb-lg-min: 991.99px;
-// $lb-lg: 992px;
-// $lb-xl-min: 1199.99px;
-// $lb-xl: 1200px;
-// $lb-xxl-min: 1399.99px;
-// $lb-xxl: 1400px;
+// $xs-min: 359.99px;
+// $xs: 360px;
+// $sm-min: 575.99px;
+// $sm: 576px;
+// $md-min: 767.99px;
+// $md: 768px;
+// $lg-min: 991.99px;
+// $lg: 992px;
+// $xl-min: 1199.99px;
+// $xl: 1200px;
+// $xxl-min: 1399.99px;
+// $xxl: 1400px;
 
 // Breakpoints desktop first
 //Widescreen - default CSS
-$lb-xxl: 1400px;
-$lb-xxl-min: 1399.99px;
-$lb-xl: 1200px;
-$lb-xl-min: 1199.99px;
-$lb-lg: 992px;
-$lb-lg-min: 991.99px;
-$lb-md: 768px;
-$lb-md-min: 767.99px;
-$lb-sm: 576px;
-$lb-sm-min: 575.99px;
-$lb-xs: 360px;
-$lb-xs-min: 359.99px;
-
-
-$breakpoints: (
-xxl: $lb-xxl,
-xxl-min: $lb-xxl-min,
-xl: $lb-xl,
-xl-min: $lb-xl-min,
-lg: $lb-lg,
-lg-min: $lb-lg-min,
-md: $lb-md,
-md-min: $lb-md-min,
-sm: $lb-sm,
-sm-min: $lb-sm-min,
-xs: $lb-xs,
-xs-min: $lb-xs-min
-);
-
-@use "sass:map";
-@mixin m-min($breakpoint) {
-  @if map.has-key($breakpoints, $breakpoint) {
-    @media (min-width: map.get($breakpoints, $breakpoint)) {
-      @content;
-    }
-  } @else {
-    @warn "No breakpoint `#{$breakpoint}` in the list.";
-  }
-}
-
-@mixin m-max($breakpoint) {
-  @if map.has-key($breakpoints, $breakpoint) {
-    @media (max-width: map.get($breakpoints, $breakpoint)) {
-      @content;
-    }
-  } @else {
-    @warn "No breakpoint `#{$breakpoint}` in the list.";
-  }
-}
+$xxl: 1400px;
+$xxl-min: 1399.99px;
+$xl: 1200px;
+$xl-min: 1199.99px;
+$lg: 992px;
+$lg-min: 991.99px;
+$md: 768px;
+$md-min: 767.99px;
+$sm: 576px;
+$sm-min: 575.99px;
+$xs: 360px;
+$xs-min: 359.99px;

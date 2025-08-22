@@ -1,7 +1,7 @@
 @use "include" as *;
 
-//Resolutions below starting from 991.99px ($lb-lg-min)
-@media screen and (max-width: $lb-lg-min) {
+//Resolutions below starting from 991.99px ($lg-min)
+@media screen and (max-width: $lg-min) {
 
 	.hamburger-toggle {
 		&:checked ~ .nav-menu {
@@ -106,17 +106,17 @@
 	
 }
 
-//Resolutions from ($lb-md) 768px to 991.99px ($lb-lg-min)
-@media screen and (min-width: $lb-md) and (max-width: $lb-lg-min) {
+//Resolutions from ($md) 768px to 991.99px ($lg-min)
+@media screen and (min-width: $md) and (max-width: $lg-min) {
 
 }
 
-//Resolutions below starting from 767.99px ($lb-md-min)
-@media screen and (max-width: $lb-md-min) {
+//Resolutions below starting from 767.99px ($md-min)
+@media screen and (max-width: $md-min) {
 
 }
 
-//Resolutions from ($lb-sm) 576px to 767.99px ($lb-md-min)
-@media screen and (min-width: $lb-sm) and (max-width: $lb-md-min) {
+//Resolutions from ($sm) 576px to 767.99px ($md-min)
+@media screen and (min-width: $sm) and (max-width: $md-min) {
 
 }
