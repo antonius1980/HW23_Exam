@@ -31,25 +31,21 @@
 	}
 }
 
-// @include font-b(1.5rem, 400, 1.8em, #fff);
-// @include font-b(1.5rem, 400, 1.8em);
-// @include font-b(1.5rem, null, 1.8em);
-@mixin font-b($fz, $fw, $lh, $clr: null) {
+// @include font-b(1.5rem, 1.8em, 400, #fff, Arial);
+// @include font-b(1.5rem, 1.8em, 400);
+// @include font-b(1.5rem, 1.8em);
+@mixin font-basic($fz, $lh, $fw: null, $clr: null, $ff: null) {
 	font-size: $fz;
-	font-weight: $fw;
 	line-height: $lh;
+	@if $fw != null {
+		font-weight: $fw;
+	}
 	@if $clr != null {
 		color: $clr;
 	}
-}
-
-// @include fluid-font(18, 32);
-// @include fluid-font(18, 32, 300, 768);
-@mixin fluid-font($min, $max, $min-vw: 320, $max-vw: 1200) {
-  font-size: clamp(#{$min}px, 
-                   calc(#{$min}px + (#{$max} - #{$min}) * 
-                   ((100vw - #{$min-vw}px) / (#{$max-vw} - #{$min-vw}))), 
-                   #{$max}px);
+	@if $ff != null {
+		font-family: $ff;
+	}
 }
 
 @mixin avh-c($pos: absolute) {
@@ -83,6 +79,15 @@
 
 @mixin transition($props: all, $time: .3s, $ease: ease) {
   transition: $props $time $ease;
+}
+
+// @include fluid-font(18, 32);
+// @include fluid-font(18, 32, 300, 768);
+@mixin fluid-font($min, $max, $min-vw: 320, $max-vw: 1200) {
+  font-size: clamp(#{$min}px, 
+                   calc(#{$min}px + (#{$max} - #{$min}) * 
+                   ((100vw - #{$min-vw}px) / (#{$max-vw} - #{$min-vw}))), 
+                   #{$max}px);
 }
 
 $breakpoints: (

@@ -13,11 +13,13 @@ body {
 	color: $text-color-primary;
 
 	background: $background-color-global $background-image-global-big no-repeat 50% 0% /contain;
-	/* Testing breakpoint mixin for responsive image */
+	// Testing breakpoint mixin for responsive image
 	// @include m-max-xmin(lg, 2x) {
 	// 	background-image: $background-image-global;
 	// }
 }
+
+
 
 .container {
 	width: $container-width;
@@ -44,10 +46,10 @@ a {
 
 .btn {
 	// font-family: "Lato", sans-serif;
-	@include font-b(2rem, 700, 1em, $buttons-color-primary);
+	@include font-basic(2rem, 1em, 700, $buttons-color-primary);
 	// font-size: 2rem;
-	// font-weight: 700;
 	// line-height: 1em;
+	// font-weight: 700;
 	// color: $buttons-color-primary;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;

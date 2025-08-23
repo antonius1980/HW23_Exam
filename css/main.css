@@ -616,7 +616,6 @@ body {
   font-weight: 300;
   color: #fff;
   background: #161926 url("../assets/img/first-screen-bg-dark@2x.webp") no-repeat 50% 0%/contain;
-  /* Testing breakpoint mixin for responsive image */
 }
 
 .container {
@@ -641,8 +640,8 @@ a:focus {
 
 .btn {
   font-size: 2rem;
-  font-weight: 700;
   line-height: 1em;
+  font-weight: 700;
   color: #53f3cd;
   letter-spacing: 0.08em;
   text-transform: uppercase;
