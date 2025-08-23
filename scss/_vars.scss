@@ -19,6 +19,7 @@ $background-color-global: #fff;
 $background-image-global: url("../assets/img/first-screen-bg.webp");
 $background-image-global-big: url("../assets/img/first-screen-bg@2x.webp");
 $quote-icon-image: url("../assets/img/svg/small/quote-icon-red.svg");
+$play-button-bg: url("../assets/img/svg/small/icon_play.svg");
 $text-color-primary: #262a3f;
 $text-color-primary-rgb: hex-to-rgb-list($text-color-primary);
 $accent-color-primary: #85bbb1;
@@ -31,7 +32,6 @@ $buttons-border-color-secondary: $buttons-color-secondary;
 $links-color-primary: $accent-color-primary;
 $links-color-secondary: $buttons-color-secondary;
 $nav-links-hover-bg: $buttons-color-primary;
-$play-button-bg: url("../assets/img/svg/small/icon_play.svg");
 $font-family-headings: "Playfair Display", serif;
 $font-color-heading: $text-color-primary;
 // $accent-color-primary-rgb: hex-to-rgb($accent-color-primary);
@@ -41,6 +41,7 @@ $font-color-heading: $text-color-primary;
 // $background-image-global: url("../assets/img/first-screen-bg.webp");
 // $background-image-global-big: url("../assets/img/first-screen-bg@2x.webp");
 // $quote-icon-image: url("../assets/img/svg/small/quote-icon-red.svg");
+// $play-button-bg: url("../assets/img/svg/small/icon_play.svg");
 // $text-color-primary: #262a3f;
 // $text-color-primary-rgb: hex-to-rgb-list($text-color-primary);
 // $accent-color-primary: #85bbb1;
@@ -53,43 +54,27 @@ $font-color-heading: $text-color-primary;
 // $links-color-primary: $accent-color-primary;
 // $links-color-secondary: $buttons-color-secondary;
 // $nav-links-hover-bg: $buttons-color-primary;
-// $play-button-bg: url("../assets/img/svg/small/icon_play.svg");
 // $font-color-heading: $text-color-primary;
 
 /* Theme Dark */
-$background-color-global: #161926;
-$background-image-global: url("../assets/img/first-screen-bg-dark.webp");
-$background-image-global-big: url("../assets/img/first-screen-bg-dark@2x.webp");
-$quote-icon-image: url("../assets/img/svg/small/quote-icon-green.svg");
-$text-color-primary: #fff;
-$text-color-primary-rgb: hex-to-rgb-list($text-color-primary);
-$accent-color-primary: #689ff2;
-$border-color-primary: #515773;
-$light-color-primary: #fff;
-$buttons-color-primary: #53f3cd;
-$buttons-color-secondary: #02e0ab;
-$buttons-border-color-primary: $border-color-primary;
-$buttons-border-color-secondary: $buttons-color-secondary;
-$links-color-primary: $accent-color-primary;
-$links-color-secondary: $buttons-color-secondary;
-$nav-links-hover-bg: linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%);
-$play-button-bg: url("../assets/img/svg/small/icon_play_dark.svg");
-$font-color-heading: $text-color-primary;
-
-// Breakpoints mobile first
-//0 - default CSS
-// $xs-min: 359.99px;
-// $xs: 360px;
-// $sm-min: 575.99px;
-// $sm: 576px;
-// $md-min: 767.99px;
-// $md: 768px;
-// $lg-min: 991.99px;
-// $lg: 992px;
-// $xl-min: 1199.99px;
-// $xl: 1200px;
-// $xxl-min: 1399.99px;
-// $xxl: 1400px;
+// $background-color-global: #161926;
+// $background-image-global: url("../assets/img/first-screen-bg-dark.webp");
+// $background-image-global-big: url("../assets/img/first-screen-bg-dark@2x.webp");
+// $quote-icon-image: url("../assets/img/svg/small/quote-icon-green.svg");
+// $play-button-bg: url("../assets/img/svg/small/icon_play_dark.svg");
+// $text-color-primary: #fff;
+// $text-color-primary-rgb: hex-to-rgb-list($text-color-primary);
+// $accent-color-primary: #689ff2;
+// $border-color-primary: #515773;
+// $light-color-primary: #fff;
+// $buttons-color-primary: #53f3cd;
+// $buttons-color-secondary: #02e0ab;
+// $buttons-border-color-primary: $border-color-primary;
+// $buttons-border-color-secondary: $buttons-color-secondary;
+// $links-color-primary: $accent-color-primary;
+// $links-color-secondary: $buttons-color-secondary;
+// $nav-links-hover-bg: linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%);
+// $font-color-heading: $text-color-primary;
 
 // Breakpoints desktop first
 //Widescreen - default CSS

@@ -1,5 +1,5 @@
 @use "include" as *;
-
+@use 'sass:color';
 html {
 	font-size: $font-size-html;
 }
@@ -470,6 +470,83 @@ a {
 	}
 }
 
+.reviews-section {
+	margin-bottom: 100px;
+	& > .heading-2,
+	& > p {
+		max-width: 400px;
+	}
+	& > p {
+		margin-bottom: 50px;
+	}
+	&__reviews-container {
+	}
+}
+
+.reviews-container {
+	@include flex-ext(center, center, row, 30px, null);
+	&__review {
+		@include flex-ext(space-between, flex-start, column-reverse, null, null);
+		position: relative;
+		max-width: 370px;
+		min-height: 340px;
+		padding: 30px 40px;
+		background-color: rgba(25, 28, 41, 0.6);
+		color: $light-color-primary;
+		&::before {
+			content: url("../assets/img/review-bg-image-1.webp");
+			position: absolute;
+
+			width:100%;
+			height: 100%;
+			top:0;
+			left:0;
+			z-index: -1;
+		}
+
+		&:nth-of-type(2):before {
+			content: url("../assets/img/review-bg-image-2.webp");
+		}
+
+		&:nth-of-type(3):before {
+			content: url("../assets/img/review-bg-image-3.webp");
+		}
+		& .heading-3 {
+			@include font-basic(2.0rem, 1.0em, 400, $light-color-primary);
+
+			letter-spacing: 0.08em;
+			margin-bottom: 0;
+		}
+		& cite {
+			font-style: italic;
+		}
+		& p {
+			@include font-basic(1.6rem, 1.625em, 400);
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.features-section {
+	@include flex-ext(flex-end, stretch);
+	min-height: 540px;
+	padding-block: 45px;
+	background: url("../assets/img/features-background-image.webp") no-repeat 0 50% / 50%;
+	&__inner-container {
+		width: 100%;
+		max-width: 770px;
+	}
+}
+
+.inner-container {
+	background-color: color.scale(rgba($background-color-global, $alpha: 90%));
+	@include flex-ext(flex-end, center, row, 70px 88px, wrap);
+	padding-left: 70px;
+	&__block {
+		flex: 1 0 40%;
+	}
+}
+
 .bottom-footer {
 	font-size: 1.4rem;
 	&__container {
@@ -489,4 +566,22 @@ a {
 		color: $text-color-primary;
 	}
 
+}
+
+.switch-theme {
+	width: 45px;
+	height: 45px;
+	background: url("../assets/img/dark.png") no-repeat 50% 50% / contain;
+	opacity: 0.5;
+	position: absolute;
+	top: 20px;
+	right: 40px;
+	z-index: 100;
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.dark .switch-theme {
+	background-image: url("../assets/img/white.png");
 }
