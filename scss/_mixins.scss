@@ -77,7 +77,7 @@
   border: 0;
 }
 
-@mixin transition($props: all, $time: .3s, $ease: ease) {
+@mixin transition($props: all, $time: .3s, $ease: ease-in-out) {
   transition: $props $time $ease;
 }
 
