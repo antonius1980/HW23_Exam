@@ -31,6 +31,7 @@ $buttons-border-color-primary: $border-color-primary;
 $buttons-border-color-secondary: $buttons-color-secondary;
 $links-color-primary: $accent-color-primary;
 $links-color-secondary: $buttons-color-secondary;
+$symbol-color: $border-color-primary;
 $nav-links-hover-bg: $buttons-color-primary;
 $font-family-headings: "Playfair Display", serif;
 $font-color-heading: $text-color-primary;
@@ -53,28 +54,30 @@ $font-color-heading: $text-color-primary;
 // $buttons-border-color-secondary: $buttons-color-secondary;
 // $links-color-primary: $accent-color-primary;
 // $links-color-secondary: $buttons-color-secondary;
+//$symbol-color: $border-color-primary;
 // $nav-links-hover-bg: $buttons-color-primary;
 // $font-color-heading: $text-color-primary;
 
 /* Theme Dark */
-// $background-color-global: #161926;
-// $background-image-global: url("../assets/img/first-screen-bg-dark.webp");
-// $background-image-global-big: url("../assets/img/first-screen-bg-dark@2x.webp");
-// $quote-icon-image: url("../assets/img/svg/small/quote-icon-green.svg");
-// $play-button-bg: url("../assets/img/svg/small/icon_play_dark.svg");
-// $text-color-primary: #fff;
-// $text-color-primary-rgb: hex-to-rgb-list($text-color-primary);
-// $accent-color-primary: #689ff2;
-// $border-color-primary: #515773;
-// $light-color-primary: #fff;
-// $buttons-color-primary: #53f3cd;
-// $buttons-color-secondary: #02e0ab;
-// $buttons-border-color-primary: $border-color-primary;
-// $buttons-border-color-secondary: $buttons-color-secondary;
-// $links-color-primary: $accent-color-primary;
-// $links-color-secondary: $buttons-color-secondary;
-// $nav-links-hover-bg: linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%);
-// $font-color-heading: $text-color-primary;
+$background-color-global: #161926;
+$background-image-global: url("../assets/img/first-screen-bg-dark.webp");
+$background-image-global-big: url("../assets/img/first-screen-bg-dark@2x.webp");
+$quote-icon-image: url("../assets/img/svg/small/quote-icon-green.svg");
+$play-button-bg: url("../assets/img/svg/small/icon_play_dark.svg");
+$text-color-primary: #fff;
+$text-color-primary-rgb: hex-to-rgb-list($text-color-primary);
+$accent-color-primary: #689ff2;
+$border-color-primary: #515773;
+$light-color-primary: #fff;
+$buttons-color-primary: #53f3cd;
+$buttons-color-secondary: #02e0ab;
+$buttons-border-color-primary: $border-color-primary;
+$buttons-border-color-secondary: $buttons-color-secondary;
+$links-color-primary: $accent-color-primary;
+$links-color-secondary: $buttons-color-secondary;
+$symbol-color: $light-color-primary;
+$nav-links-hover-bg: linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%);
+$font-color-heading: $text-color-primary;
 
 // Breakpoints desktop first
 //Widescreen - default CSS

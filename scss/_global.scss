@@ -38,6 +38,11 @@ a {
 	}
 }
 
+p {
+	letter-spacing: 0.012em;
+	opacity: 0.8;
+}
+
 .btn {
 	// font-family: "Lato", sans-serif;
 	@include font-basic(2rem, 1em, 700, $buttons-color-primary);
@@ -51,7 +56,7 @@ a {
 	&::after {
 		content: "";
 		position: absolute;
-		width: 100%;
+		width: 97%;
 		height: 13px;
 		top: 50%;
 		left:10px;
@@ -85,7 +90,7 @@ a {
 		padding: 33px $btn--big-inline-padding;
 		border: 1px solid $buttons-border-color-primary;
 		&::after {
-			width: calc(100% - $btn--big-inline-padding * 2);
+			width: calc(98% - $btn--big-inline-padding * 2);
 			left: calc(10px + $btn--big-inline-padding);
 		}
 		&:hover {
@@ -130,19 +135,19 @@ a {
 	&-2 {
 		font-size: 4.0rem;
 		line-height: 1.2em;
-		margin-bottom: 20px;
+		margin-bottom: 25px;
 	}
 	&-3 {
 		font-size: 2.4rem;
 		line-height: 2em;
-		letter-spacing: 0.105em;
-		margin-bottom: 15px;
-		& data {
+		margin-bottom: 6px;
+		&--huge {
 			@include font-basic(6.8rem, 1.06em);
 			text-align: center;
 			& span {
 				@include font-basic(4.0rem, 1.25em);
-				color: $border-color-primary;
+				color: $symbol-color;
+				vertical-align: middle;
 			}
 		}
 	}
@@ -242,7 +247,6 @@ a {
 	padding: 150px 0;
 	margin-bottom: 0;
 	& p {
-		letter-spacing: 0.01em;
 		max-width: 84%;
 		margin-bottom: 50px;
 	}
@@ -251,7 +255,7 @@ a {
 .bg-half-section {
 	@include flex-ext(flex-end, stretch);
 	padding-block: 45px;
-	background: url("../assets/img/statistic-image.webp") no-repeat 0 50% / 50%;
+	background: url("../assets/img/statistic-image@2x.webp") no-repeat 0 50% / 49%;
 	&__container {
 		width: 100%;
 		max-width: 770px;
@@ -261,7 +265,7 @@ a {
 
 .transparent-container {
 	background-color: color.scale(rgba($background-color-global, $alpha: 90%));
-	@include flex-ext(flex-end, center, row, 70px 88px, wrap);
+	@include flex-ext(flex-end, center, row, 70px 100px, wrap);
 	align-content: center;
 	&__block {
 		flex: 1 0 40%;
@@ -277,17 +281,11 @@ a {
 	padding-block: 45px;
 	padding-left: 0;
 	&__block {
-		&:first-of-type {
-			@include flex-ext(center, center, column, 40px);
-			width: 100%;
-			text-align: center;
-			flex: 0 0 370px;
-		}
 		& .heading {
 			margin-bottom: 12px;
 		}
-		& .heading:has(data) + p::after {
-			color:red;
+		& ul {
+			@include flex-ext(center, center, column, 80px 0);
 		}
 		& p {
 			margin-bottom: 30px;
@@ -295,16 +293,45 @@ a {
 		& p:last-of-type {
 			margin-bottom: 50px;
 		}
+		&:first-of-type {
+			@include flex-ext(center, center, column, 40px);
+			width: 100%;
+			text-align: center;
+			flex: 0 0 370px;
+			& h3 + p {
+				margin-bottom: 0;
+			}
+		}
+		& .heading.heading-3--huge + p {
+			position: relative;
+			&::after {
+				content: "";
+				background-color: $accent-color-primary;
+				@include ah-c;
+				width:100px;
+				height: 1px;
+				bottom: -40px;
+			}
+		}
+		& li:last-of-type .heading.heading-3--huge + p {
+			&::after {
+				content: none;
+			}
+		}
 	}
 }
 
 .features-section {
 	min-height: 540px;
-	background: url("../assets/img/features-background-image.webp") no-repeat 0 50% / 50%;
+	background: url("../assets/img/features-background-image@2x.webp") no-repeat 0 50% / 51%;
+	& li:not(:last-of-type) {
+		margin-bottom: 10px;
+	}
 }
 
 .benefits-section {
 	@include flex-ext(space-between,flex-start, row, 90px 30px, wrap);
+	padding-top: 30px;
 	& .heading-2 {
 		max-width: 96%;
 		margin-bottom: 30px;
@@ -328,13 +355,14 @@ a {
 }
 
 .blockquote {
-	letter-spacing: 0.04em;
 	padding: 30px 0 0 60px;
 	background: $quote-icon-image no-repeat left top;
-	&__content {
+	& p {
 	font-size: 3.2rem;
 	line-height: 1.44em;
-	margin-bottom: 40px;
+	margin-bottom: 25px;
+	letter-spacing: 0.045em;
+	opacity: 1;
 		&:has(>cite) {
 			margin-bottom:0;
 		}
@@ -353,16 +381,19 @@ a {
 	font-weight: 400;
 	color: $light-color-primary;
 	min-height: 400px;
-	padding: 70px 300px 100px 100px;
-	background: $text-color-primary url("../assets/img/quote-background.webp") no-repeat center center / cover;
+	padding: 70px 100px;
+	background: $text-color-primary url("../assets/img/quote-background@2x.webp") no-repeat center center / cover;
 	&__block {
-		max-width: 710px;
+		max-width: 770px;
 	}
 }
 
 .video-section {
 	@include flex-ext(null,null,column);
 	padding-inline: 100px;
+	& p {
+		max-width: 900px;
+	}
 	&__video-container {
 		order: -1;
 	}
@@ -372,6 +403,7 @@ a {
 	position: relative;
 	width: 100%;
 	margin-bottom: 50px;
+	margin-bottom: 105px;
 	&::before,
 	&::after {
 		content: "";
@@ -403,7 +435,7 @@ a {
 			height: 89.6%;
 			left: 3.3%;
 			right: 7.3%;
-			background: url("../assets/img/screensaver-only-for-video.webp") no-repeat center / cover;
+			background: url("../assets/img/screensaver-only-for-video@2x.webp") no-repeat center / cover;
 			outline: 1px solid $border-color-primary;
 			border-radius: 5px;
 			cursor: pointer;
@@ -452,6 +484,9 @@ a {
 
 .reviews-section {
 	margin-bottom: 100px;
+	& > .heading-2 {
+		margin-bottom: 20px;
+	}
 	& > .heading-2,
 	& > p {
 		max-width: 400px;
@@ -472,7 +507,8 @@ a {
 		background-color: rgba(25, 28, 41, 0.6);
 		color: $light-color-primary;
 		&::before {
-			content: url("../assets/img/review-bg-image-1.webp");
+			content: "";
+			background: url("../assets/img/review-bg-image-1@2x.webp") no-repeat 50% 50% /cover;
 			position: absolute;
 			width:100%;
 			height: 100%;
@@ -482,11 +518,11 @@ a {
 		}
 
 		&:nth-of-type(2):before {
-			content: url("../assets/img/review-bg-image-2.webp");
+			background-image: url("../assets/img/review-bg-image-2@2x.webp");
 		}
 
 		&:nth-of-type(3):before {
-			content: url("../assets/img/review-bg-image-3.webp");
+			background-image: url("../assets/img/review-bg-image-3@2x.webp");
 		}
 		& .heading-3 {
 			@include font-basic(2.0rem, 1.0em, 400, $light-color-primary);
@@ -506,9 +542,8 @@ a {
 
 .contact-section {
 	@include flex-ext(space-between, flex-start, row);
-	& .heading-2 {
-		margin-bottom: 30px;
-	}
+	padding-top: 55px;
+	margin-bottom: 100px;
 	&__col {
 		flex: 0 1 470px;
 		&:first-of-type {
@@ -525,7 +560,7 @@ a {
 		// display: block;
 		@include font-basic(2.0rem, 1.0em, 400, null, null);
 		border-bottom: 1px solid color.scale(rgba($text-color-primary, $alpha: 10%));
-		padding-bottom: 12px;
+		padding-bottom: 8px;
 		color: color.scale(rgba($text-color-primary, $alpha: 60%));
 		background-color: transparent; 
 		-webkit-text-fill-color: color.scale(rgba($text-color-primary, $alpha: 60%));
@@ -562,11 +597,21 @@ a {
 	@include v-hid;
 }
 
+.border-on-top {
+	border-top: 1px solid $border-color-primary;
+}
+
 .bottom-footer {
 	font-size: 1.4rem;
 	&__container {
 		@include flex-ext(space-between, center);
-		padding: 30px 0;
+		padding: 25px 0;
+	}
+	&__author {
+		padding-left: 30px;
+		& span {
+			padding-right: 10px;
+		}
 	}
 	& p span {
 		opacity: 0.6;
@@ -574,24 +619,33 @@ a {
 	&__link {
 		opacity: 1;
 		color: $text-color-primary;
+		letter-spacing: 0.07em;
 	}
 
+	&__nav {
+		& .nav-menu {
+			gap:35px;
+		}
+	}
 }
 
 .switch-theme {
-	width: 45px;
-	height: 45px;
-	background: url("../assets/img/dark.png") no-repeat 50% 50% / contain;
-	opacity: 0.5;
-	position: absolute;
-	top: 20px;
-	right: 40px;
+	width: 40px;
+	height: 40px;
+	background: url("../assets/img/face_cat.png") no-repeat 50% 50% / 70%;
+	opacity: 0.3;
+	position: fixed;
+	top: 55px;
+	right: 30px;
 	z-index: 100;
+	transition: all 0.3s ease-in-out;
+	background-color: #fff;
+	border-radius: 50%;
 	&:hover {
 		opacity: 1;
 	}
 }
 
-.dark .switch-theme {
-	background-image: url("../assets/img/white.png");
+.theme-dark .switch-theme {
+	filter: invert(1);
 }
