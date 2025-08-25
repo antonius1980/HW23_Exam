@@ -6,15 +6,29 @@ $font-size-html: 10px;
 $font-size-global: 18px;
 $line-height-global: 26px;
 $font-family-global: "Lato", sans-serif;
-$font-weight-global: 300;
-
+$font-family-headings: "Playfair Display", serif;
 $container-width: 100%;
 $container-width-max: 1170px;
 $container-padding: 25px;
-
 $btn--big-inline-padding: 90px;
 $video-aspect-ratio: math.div(16, 9);
 
+// Breakpoints desktop first
+//Widescreen - default CSS
+$xxl: 1400px;
+$xxl-min: 1399.99px;
+$xl: 1200px;
+$xl-min: 1199.99px;
+$lg: 992px;
+$lg-min: 991.99px;
+$md: 768px;
+$md-min: 767.99px;
+$sm: 576px;
+$sm-min: 575.99px;
+$xs: 360px;
+$xs-min: 359.99px;
+
+/* Theme Light */
 $background-color-global: #fff;
 $background-image-global: url("../assets/img/first-screen-bg.webp");
 $background-image-global-big: url("../assets/img/first-screen-bg@2x.webp");
@@ -33,63 +47,69 @@ $links-color-primary: $accent-color-primary;
 $links-color-secondary: $buttons-color-secondary;
 $symbol-color: $border-color-primary;
 $nav-links-hover-bg: $buttons-color-primary;
-$font-family-headings: "Playfair Display", serif;
 $font-color-heading: $text-color-primary;
-// $accent-color-primary-rgb: hex-to-rgb($accent-color-primary);
-
-/* Theme Light */
-// $background-color-global: #fff;
-// $background-image-global: url("../assets/img/first-screen-bg.webp");
-// $background-image-global-big: url("../assets/img/first-screen-bg@2x.webp");
-// $quote-icon-image: url("../assets/img/svg/small/quote-icon-red.svg");
-// $play-button-bg: url("../assets/img/svg/small/icon_play.svg");
-// $text-color-primary: #262a3f;
-// $text-color-primary-rgb: hex-to-rgb-list($text-color-primary);
-// $accent-color-primary: #85bbb1;
-// $border-color-primary: #e4e4e4;
-// $light-color-primary: #fff;
-// $buttons-color-primary: #f1897b;
-// $buttons-color-secondary: #e54f3a;
-// $buttons-border-color-primary: $border-color-primary;
-// $buttons-border-color-secondary: $buttons-color-secondary;
-// $links-color-primary: $accent-color-primary;
-// $links-color-secondary: $buttons-color-secondary;
-//$symbol-color: $border-color-primary;
-// $nav-links-hover-bg: $buttons-color-primary;
-// $font-color-heading: $text-color-primary;
 
 /* Theme Dark */
-$background-color-global: #161926;
-$background-image-global: url("../assets/img/first-screen-bg-dark.webp");
-$background-image-global-big: url("../assets/img/first-screen-bg-dark@2x.webp");
-$quote-icon-image: url("../assets/img/svg/small/quote-icon-green.svg");
-$play-button-bg: url("../assets/img/svg/small/icon_play_dark.svg");
-$text-color-primary: #fff;
-$text-color-primary-rgb: hex-to-rgb-list($text-color-primary);
-$accent-color-primary: #689ff2;
-$border-color-primary: #515773;
-$light-color-primary: #fff;
-$buttons-color-primary: #53f3cd;
-$buttons-color-secondary: #02e0ab;
-$buttons-border-color-primary: $border-color-primary;
-$buttons-border-color-secondary: $buttons-color-secondary;
-$links-color-primary: $accent-color-primary;
-$links-color-secondary: $buttons-color-secondary;
-$symbol-color: $light-color-primary;
-$nav-links-hover-bg: linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%);
-$font-color-heading: $text-color-primary;
+$background-color-global--dark: #161926;
+$background-image-global--dark: url("../assets/img/first-screen-bg-dark.webp");
+$background-image-global-big--dark: url("../assets/img/first-screen-bg-dark@2x.webp");
+$quote-icon-image--dark: url("../assets/img/svg/small/quote-icon-green.svg");
+$play-button-bg--dark: url("../assets/img/svg/small/icon_play_dark.svg");
+$text-color-primary--dark: #fff;
+$text-color-primary-rgb--dark: hex-to-rgb-list($text-color-primary--dark);
+$accent-color-primary--dark: #689ff2;
+$border-color-primary--dark: #515773;
+$light-color-primary--dark: #fff;
+$buttons-color-primary--dark: #53f3cd;
+$buttons-color-secondary--dark: #02e0ab;
+$buttons-border-color-primary--dark: $border-color-primary--dark;
+$buttons-border-color-secondary--dark: $buttons-color-secondary--dark;
+$links-color-primary--dark: $accent-color-primary--dark;
+$links-color-secondary--dark: $buttons-color-secondary--dark;
+$symbol-color--dark: $light-color-primary--dark;
+$nav-links-hover-bg--dark: linear-gradient(96.73deg, #53F3CD 6.73%, rgba(83, 243, 205, 0) 116.9%);
+$font-color-heading--dark: $text-color-primary--dark;
 
-// Breakpoints desktop first
-//Widescreen - default CSS
-$xxl: 1400px;
-$xxl-min: 1399.99px;
-$xl: 1200px;
-$xl-min: 1199.99px;
-$lg: 992px;
-$lg-min: 991.99px;
-$md: 768px;
-$md-min: 767.99px;
-$sm: 576px;
-$sm-min: 575.99px;
-$xs: 360px;
-$xs-min: 359.99px;
+/* Theme Light CSS vars */
+:root{
+--background-color-global: #{$background-color-global};
+--background-image-global: #{$background-image-global};
+--background-image-global-big: #{$background-image-global-big};
+--quote-icon-image: #{$quote-icon-image};
+--play-button-bg: #{$play-button-bg};
+--text-color-primary: #{$text-color-primary};
+--accent-color-primary: #{$accent-color-primary};
+--border-color-primary: #{$border-color-primary};
+--light-color-primary: #{$light-color-primary};
+--buttons-color-primary: #{$buttons-color-primary};
+--buttons-color-secondary: #{$buttons-color-secondary};
+--buttons-border-color-primary: #{$buttons-border-color-primary};
+--buttons-border-color-secondary: #{$buttons-border-color-secondary};
+--links-color-primary: #{$links-color-primary};
+--links-color-secondary: #{$links-color-secondary};
+--symbol-color: #{$symbol-color};
+--nav-links-hover-bg: #{$nav-links-hover-bg};
+--font-color-heading: #{$font-color-heading};
+}
+
+/* Theme Dark CSS vars */
+.theme-dark {
+--background-color-global: #{$background-color-global--dark};
+--background-image-global: #{$background-image-global--dark};
+--background-image-global-big: #{$background-image-global-big--dark};
+--quote-icon-image: #{$quote-icon-image--dark};
+--play-button-bg: #{$play-button-bg--dark};
+--text-color-primary: #{$text-color-primary--dark};
+--accent-color-primary: #{$accent-color-primary--dark};
+--border-color-primary: #{$border-color-primary--dark};
+--light-color-primary: #{$light-color-primary--dark};
+--buttons-color-primary: #{$buttons-color-primary--dark};
+--buttons-color-secondary: #{$buttons-color-secondary--dark};
+--buttons-border-color-primary: #{$buttons-border-color-primary--dark};
+--buttons-border-color-secondary: #{$buttons-border-color-secondary--dark};
+--links-color-primary: #{$links-color-primary--dark};
+--links-color-secondary: #{$links-color-secondary--dark};
+--symbol-color: #{$symbol-color--dark};
+--nav-links-hover-bg: #{$nav-links-hover-bg--dark};
+--font-color-heading: #{$font-color-heading--dark};
+}
